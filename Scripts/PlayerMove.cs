@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float runSpeed = 2;
-    public float jumpSpeed = 3;
+    public float jumpSpeed = 2.5f;
+    public float doubleJumpSpeed = 2f;
+
+    private bool canDoubleJump;
 
     public bool betterJump = true;
     public float fallMultiplier = 0.5f;
@@ -22,10 +25,23 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space") && CheckGround.isGrounded)
+        if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
+            if (CheckGround.isGrounded)
+            {
+                canDoubleJump = true;
+                rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
+            }else if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) )
+            {
+                if (canDoubleJump)
+                {
+                    RunAnimator.SetBool("DoubleJump", true);
+                    rb2D.velocity = new Vector2(rb2D.velocity.x, doubleJumpSpeed);
+                    canDoubleJump = false;
+                }
+            }
         }
+
         if (CheckGround.isGrounded == false)
         {
             RunAnimator.SetBool("Jump", true);
@@ -34,7 +50,27 @@ public class PlayerMove : MonoBehaviour
         else if (CheckGround.isGrounded == true)
         {
             RunAnimator.SetBool("Jump", false);
+            RunAnimator.SetBool("DoubleJump", false);
+            RunAnimator.SetBool("Falling", false);
 
+        }
+
+        if(rb2D.velocity.y> 0)
+        {
+            RunAnimator.SetBool("Falling", false);
+        }
+
+        if (betterJump)
+        {
+            if (rb2D.velocity.y < 0)
+            {
+                rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier) * Time.deltaTime;
+                RunAnimator.SetBool("Falling", true);
+            }
+            else if ((rb2D.velocity.y > 0 && !Input.GetKey("space")) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.W))
+            {
+                rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier) * Time.deltaTime;
+            }
         }
     }
 
@@ -58,17 +94,5 @@ public class PlayerMove : MonoBehaviour
             RunAnimator.SetBool("Run", false);
         }
         
-
-        if (betterJump)
-        {
-            if (rb2D.velocity.y<0)
-            {
-                rb2D.velocity += Vector2.up * Physics2D.gravity.y*(fallMultiplier) * Time.deltaTime;
-            }
-            if (rb2D.velocity.y>0 && !Input.GetKey("space"))
-            {
-                rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier) * Time.deltaTime;
-            }
-        }
     }
 }
