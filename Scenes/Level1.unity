@@ -5684,8 +5684,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4368038094831248564, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
       propertyPath: playeSelected
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4368038094831248564, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
+      propertyPath: playerRenderer.Array.data[1]
+      value: 
+      objectReference: {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
+    - target: {fileID: 4368038094831248564, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
+      propertyPath: playerRenderer.Array.data[2]
+      value: 
+      objectReference: {fileID: -6367560908665664636, guid: d348dff3819df794186a80cb95777629, type: 3}
+    - target: {fileID: 4368038094831248564, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
+      propertyPath: playerController.Array.data[1]
+      value: 
+      objectReference: {fileID: 9100000, guid: d5a8f95d46904f842bd136cc86693749, type: 2}
+    - target: {fileID: 4368038094831248564, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
+      propertyPath: playerController.Array.data[2]
+      value: 
+      objectReference: {fileID: 9100000, guid: f6ace46220055fb4fba505fa867e9bd7, type: 2}
     - target: {fileID: 6605134107430445429, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
       propertyPath: m_RootOrder
       value: 0
