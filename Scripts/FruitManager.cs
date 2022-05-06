@@ -7,10 +7,29 @@ using UnityEngine.UI;
 public class FruitManager : MonoBehaviour   
 {
     public Text levelCleared;
+
     public GameObject transition;
+
+    public Text totalFruits;
+    public Text fruitsCollected;
+
+    private int totalFroitsInLevel;
+
+
+    private void Start()
+    {
+        totalFroitsInLevel = transform.childCount;
+    }
+    private void FixedUpdate()
+    {
+        AllFruitCollected();
+        totalFruits.text = totalFroitsInLevel.ToString();
+        int cantidadEnNumero = totalFroitsInLevel - (transform.childCount);
+        fruitsCollected.text = cantidadEnNumero.ToString();
+    }
     public void AllFruitCollected()
     {
-        if(transform.childCount == 1)
+        if(transform.childCount == 0)
         {
             levelCleared.gameObject.SetActive(true);
             Invoke("transitionActive", 1);
@@ -19,7 +38,6 @@ public class FruitManager : MonoBehaviour
 
     void ChangeEscene()
     {
-        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
