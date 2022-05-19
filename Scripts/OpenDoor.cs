@@ -8,7 +8,10 @@ public class OpenDoor : MonoBehaviour
 {
     public Text KeyPress;
     private bool inDoor = false;
+    public GameObject transition;
+    public Canvas canvas;
     public string LevelName;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -28,8 +31,14 @@ public class OpenDoor : MonoBehaviour
     {
         if(inDoor && Input.GetKeyDown("e"))
         {
-            SceneManager.LoadScene(LevelName);
+            transition.SetActive(true);
+            canvas.enabled = false;
+            Invoke("ChangeEscene", 0.3f);
         }
     }
 
+    void ChangeEscene()
+    {
+        LoadingLevel.LevelLoading(LevelName);
+    }
 }

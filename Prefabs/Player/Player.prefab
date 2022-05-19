@@ -201,7 +201,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &6605134107430445435
 CapsuleCollider2D:
@@ -264,16 +264,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d959db77ee4324394f0a24f899db24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playeSelected: 0
+  enableSelectPlayer: 0
+  playeSelected: 2
   animator: {fileID: 6605134107430445431}
   spriteRenderer: {fileID: 6605134107430445428}
   playerController:
   - {fileID: 9100000, guid: 5d12f19368bf0054e95f0689a7194d6d, type: 2}
-  - {fileID: 9100000, guid: f6ace46220055fb4fba505fa867e9bd7, type: 2}
   - {fileID: 9100000, guid: d5a8f95d46904f842bd136cc86693749, type: 2}
+  - {fileID: 9100000, guid: f6ace46220055fb4fba505fa867e9bd7, type: 2}
   - {fileID: 9100000, guid: 65f0bc1e0ad92144aad4ab7820696900, type: 2}
   playerRenderer:
   - {fileID: -6367560908665664636, guid: cd947491a13509945aa1b644f9db3ef2, type: 3}
-  - {fileID: -6367560908665664636, guid: d348dff3819df794186a80cb95777629, type: 3}
   - {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
+  - {fileID: -6367560908665664636, guid: d348dff3819df794186a80cb95777629, type: 3}
   - {fileID: -6367560908665664636, guid: 3750f45c844123341b9a777a96cb1eca, type: 3}

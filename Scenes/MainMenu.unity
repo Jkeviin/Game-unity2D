@@ -1750,6 +1750,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyPress: {fileID: 792706528}
+  transition: {fileID: 2055704827}
+  canvas: {fileID: 263340765}
   LevelName: Level2
 --- !u!1 &471148841
 GameObject:
@@ -1961,6 +1963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyPress: {fileID: 792706528}
+  transition: {fileID: 2055704827}
+  canvas: {fileID: 263340765}
   LevelName: Level1
 --- !u!1 &553627163
 GameObject:
@@ -3045,6 +3049,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19be0899f95d1704196b127dc5b9558c, type: 3}
+--- !u!1001 &766180318
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3913818425949845683, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176889, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_Name
+      value: TransitionAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176889, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913818425984176895, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
 --- !u!1 &792706526
 GameObject:
   m_ObjectHideFlags: 0
@@ -8358,6 +8427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyPress: {fileID: 792706528}
+  transition: {fileID: 2055704827}
+  canvas: {fileID: 263340765}
   LevelName: Level2
 --- !u!61 &1954850993
 BoxCollider2D:
@@ -8510,6 +8581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyPress: {fileID: 792706528}
+  transition: {fileID: 2055704827}
+  canvas: {fileID: 263340765}
   LevelName: Level1
 --- !u!1 &2006356781
 GameObject:
@@ -8736,6 +8809,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2055704827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3913818425984176889, guid: 18f29a2ccafa17d47b078ebf7f9fc549, type: 3}
+  m_PrefabInstance: {fileID: 766180318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096995329
 GameObject:
   m_ObjectHideFlags: 0
