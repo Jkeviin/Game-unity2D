@@ -17,6 +17,9 @@ public class PlayerMove : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Animator RunAnimator;
 
+    public GameObject dustLeft;
+    public GameObject dustRight;
+
     Rigidbody2D rb2D;
     void Start()
     {
@@ -78,20 +81,36 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
+
             rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
             spriteRenderer.flipX = false;
             RunAnimator.SetBool("Run", true);
+
+            if (CheckGround.isGrounded == true)
+            {
+                dustLeft.SetActive(true);
+                dustRight.SetActive(false);
+            }
+
         }
         else if (Input.GetKey("a") || Input.GetKey("left"))
         {
             rb2D.velocity = new Vector2(-runSpeed, rb2D.velocity.y);
             spriteRenderer.flipX = true;
             RunAnimator.SetBool("Run", true);
+
+            if (CheckGround.isGrounded == true)
+            {
+                dustLeft.SetActive(false);
+                dustRight.SetActive(true);
+            }
         }
         else
         {
             rb2D.velocity = new Vector2(0, rb2D.velocity.y);
             RunAnimator.SetBool("Run", false);
+            dustLeft.SetActive(false);
+            dustRight.SetActive(false);
         }
         
     }

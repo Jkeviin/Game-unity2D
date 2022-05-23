@@ -6,7 +6,7 @@ public class PlayerSelect : MonoBehaviour
 {
     public bool enableSelectPlayer = false;
 
-    public enum Player {Frog, PinkMan, VirtualGuy, MaskDude};
+    public enum Player {Frog, MaskDude, PinkMan, VirtualGuy};
     public Player playeSelected;
 
     public Animator animator;
@@ -29,7 +29,7 @@ public class PlayerSelect : MonoBehaviour
                     spriteRenderer.sprite = playerRenderer[0];
                     animator.runtimeAnimatorController = playerController[0];
                     break;
-                case Player.PinkMan:
+                case Player.MaskDude:
                     spriteRenderer.sprite = playerRenderer[1];
                     animator.runtimeAnimatorController = playerController[1];
                     break;
@@ -37,7 +37,7 @@ public class PlayerSelect : MonoBehaviour
                     spriteRenderer.sprite = playerRenderer[2];
                     animator.runtimeAnimatorController = playerController[2];
                     break;
-                case Player.MaskDude:
+                case Player.PinkMan:
                     spriteRenderer.sprite = playerRenderer[3];
                     animator.runtimeAnimatorController = playerController[3];
                     break;
@@ -53,15 +53,15 @@ public class PlayerSelect : MonoBehaviour
                 spriteRenderer.sprite = playerRenderer[0];
                 animator.runtimeAnimatorController = playerController[0];
                 break;
-            case "PinkMan":
+            case "MaskDude":
                 spriteRenderer.sprite = playerRenderer[1];
                 animator.runtimeAnimatorController = playerController[1];
                 break;
-            case "VirtualGuy":
+            case "PinkMan":
                 spriteRenderer.sprite = playerRenderer[2];
                 animator.runtimeAnimatorController = playerController[2];
                 break;
-            case "MaskDude":
+            case "VirtualGuy":
                 spriteRenderer.sprite = playerRenderer[3];
                 animator.runtimeAnimatorController = playerController[3];
                 break;
