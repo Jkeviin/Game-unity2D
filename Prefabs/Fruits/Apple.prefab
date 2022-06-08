@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 4891756689225366991}
+  col2D: {fileID: 8098754089628939284}
 --- !u!82 &4891756689225366991
 AudioSource:
   m_ObjectHideFlags: 0

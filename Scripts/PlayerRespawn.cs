@@ -5,14 +5,64 @@ using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
+
+    public AudioSource clipDie;
+
+    public AudioSource clipHit;
+
+    public GameObject[] hearts;
+    private int life;
+
+    Rigidbody2D rb2D;
+
+    public GameObject destroyParticle;
+    public PlayerMove playerMove;
+
+    public SpriteRenderer spriteRenderer;
+
+    public Collider2D colliderPlayer;
+
     private float checkPointPositionX, checkPointPositionY;
+
     public Animator animator;
      
     void Start()
     {
+        rb2D = GetComponent<Rigidbody2D>();
+
+        life = hearts.Length;
+
+
         if(PlayerPrefs.GetFloat("checkPointPositionX")!= 0)
         {
             transform.position = (new Vector2(PlayerPrefs.GetFloat("checkPointPositionX"), PlayerPrefs.GetFloat("checkPointPositionY")));
+        }
+    }
+
+    private void CheckLife()
+    {
+        clipHit.Play();
+        if (life<1)
+        {
+            clipDie.Play();
+            rb2D.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+            colliderPlayer.enabled = false;
+            playerMove.enabled = false;
+            rb2D.velocity = new Vector2(rb2D.velocity.x, 3f);
+            Destroy(hearts[0].  gameObject);
+            Invoke("JumpDie", 0.2f);
+            
+        }
+        else if (life<2)
+        {
+            Destroy(hearts[1].gameObject);
+            animator.Play("Hit");
+        }
+        else if (life<3)
+        {
+            Destroy(hearts[2].gameObject);
+            animator.Play("Hit");
         }
     }
 
@@ -24,7 +74,21 @@ public class PlayerRespawn : MonoBehaviour
 
     public void PlayerDamaged()
     {
-        animator.Play("Hit");
+        life--;
+        rb2D.velocity = new Vector2(rb2D.velocity.x, 3f);
+        CheckLife();
+    }
+
+
+    private void JumpDie()
+    {
+        rb2D.constraints = RigidbodyConstraints2D.FreezePositionY;
+        spriteRenderer.enabled = false;
+        destroyParticle.SetActive(true);    
+        Invoke("ChangeEscene", 0.6f);
+    }
+    private void ChangeEscene()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

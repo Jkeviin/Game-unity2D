@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 1814727008341973006}
+  col2D: {fileID: 5921279407230545019}
 --- !u!61 &5921279407230545019
 BoxCollider2D:
   m_ObjectHideFlags: 0

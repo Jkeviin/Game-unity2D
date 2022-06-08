@@ -1856,6 +1856,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &138211818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6733570792739530164, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
+  m_PrefabInstance: {fileID: 1214388919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &140157436
 GameObject:
   m_ObjectHideFlags: 0
@@ -66952,7 +66957,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2239860769883937425, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4469646024696572077, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
       propertyPath: m_RootOrder
@@ -67006,9 +67011,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6605134107430445432, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
+      propertyPath: dustLeft
+      value: 
+      objectReference: {fileID: 1700215062}
+    - target: {fileID: 6605134107430445432, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
+      propertyPath: dustRight
+      value: 
+      objectReference: {fileID: 138211818}
     - target: {fileID: 6733570792739530164, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7585958372487633220, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
       propertyPath: m_RootOrder
@@ -75145,6 +75158,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1700215062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2239860769883937425, guid: 171e17d8d8ddb1e4592a763f6a8d8216, type: 3}
+  m_PrefabInstance: {fileID: 1214388919}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1700742654
 GameObject:
   m_ObjectHideFlags: 0
