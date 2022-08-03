@@ -598,6 +598,7 @@ MonoBehaviour:
   destroyParticle: {fileID: 1519657469}
   playerMove: {fileID: 6605134107430445432}
   spriteRenderer: {fileID: 6605134107430445428}
+  spriteRendererDestroy: {fileID: 0}
   colliderPlayer: {fileID: 6605134107430445435}
   animator: {fileID: 6605134107430445431}
 --- !u!114 &4368038094831248564

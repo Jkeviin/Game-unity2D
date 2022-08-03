@@ -20,6 +20,8 @@ public class PlayerRespawn : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
+    public SpriteRenderer spriteRendererDestroy;
+
     public Collider2D colliderPlayer;
 
     private float checkPointPositionX, checkPointPositionY;
@@ -28,6 +30,9 @@ public class PlayerRespawn : MonoBehaviour
      
     void Start()
     {
+
+        spriteRendererDestroy = destroyParticle.GetComponent<SpriteRenderer>();
+
         rb2D = GetComponent<Rigidbody2D>();
 
         life = hearts.Length;
@@ -83,6 +88,18 @@ public class PlayerRespawn : MonoBehaviour
     private void JumpDie()
     {
         rb2D.constraints = RigidbodyConstraints2D.FreezePositionY;
+       
+        if (spriteRenderer.flipX == false)
+        {
+            spriteRendererDestroy.flipX = false;
+        }
+        else if (spriteRenderer.flipX == true){
+
+            spriteRendererDestroy.flipX = true;
+        }
+
+        destroyParticle.SetActive(true);
+
         spriteRenderer.enabled = false;
         destroyParticle.SetActive(true);    
         Invoke("ChangeEscene", 0.6f);
